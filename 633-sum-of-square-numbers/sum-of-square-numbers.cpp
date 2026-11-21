@@ -17,7 +17,8 @@ public:
                 x=c-y;
             }
             else{
-                x=((int)sqrt(x)+1)*((int)sqrt(x)+1);
+                int value = (int)sqrt(x);
+                x=(value+1)*(value+1);
                 y=c-x;
             }
         }
