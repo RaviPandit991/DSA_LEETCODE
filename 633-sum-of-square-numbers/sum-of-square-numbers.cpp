@@ -1,26 +1,13 @@
 class Solution {
 public:
-    bool ispersqrt(int n){
-        int x = (int)sqrt(n);
-        if(x*x==n) return true;
-        else return false;
-    }
     bool judgeSquareSum(int c) {
-        int x=0;
-        int y=c;
+        long long x=0;
+        long long y=sqrt(c);
         while(x<=y){
-            if(ispersqrt(x) && ispersqrt(y)){
-                return true;
-            }
-            else if(!ispersqrt(y)){
-                y=(int)(sqrt(y))*(int)(sqrt(y));
-                x=c-y;
-            }
-            else{
-                int value = (int)sqrt(x);
-                x=(value+1)*(value+1);
-                y=c-x;
-            }
+            long long sum = (x*x)+(y*y);
+            if(sum==c) return true;
+            else if(sum<c) x++;
+            else y--;
         }
         return false;
     }
