@@ -11,10 +11,8 @@ bool helper(int mid, int n, vector<int>& arr, int hours) {
 }
     int minEatingSpeed(vector<int>& piles, int h) {
     int n=piles.size();
-    long long sum =0;
     int max = INT_MIN;
     for(int i=0;i<n;i++){
-        sum+=piles[i];
         if(max<=piles[i]) max=piles[i];
     }
     int ans =0;
